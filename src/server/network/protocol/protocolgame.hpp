@@ -14,6 +14,7 @@
 #include "creatures/creature.hpp"
 #include "enums/forge_conversion.hpp"
 #include "creatures/players/cyclopedia/player_badge.hpp"
+#include "creatures/players/cyclopedia/player_cyclopedia.hpp"
 #include "creatures/players/cyclopedia/player_title.hpp"
 
 class NetworkMessage;
@@ -502,6 +503,7 @@ private:
 	bool oldProtocol = false;
 
 	uint16_t otclientV8 = 0;
+	bool isOTC = false;
 
 	void sendInventory();
 	void sendOpenStash();
@@ -515,6 +517,7 @@ private:
 	void sendDoubleSoundEffect(const Position &pos, SoundEffect_t mainSoundId, SourceEffect_t mainSource, SoundEffect_t secondarySoundId, SourceEffect_t secondarySource);
 
 	void sendHotkeyPreset();
+	void sendTakeScreenshot(Screenshot_t screenshotType);
 	void sendDisableLoginMusic();
 
 	uint8_t m_playerDeathTime = 0;
